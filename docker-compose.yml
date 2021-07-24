@@ -13,6 +13,7 @@ services:
             - 3000:3000
         networks:
             - grafana
+        restart: unless-stopped
 
     prometheus:
         image: prom/prometheus
@@ -25,3 +26,4 @@ services:
             - 9090:9090
         networks:
             - grafana
+        restart: unless-stopped
