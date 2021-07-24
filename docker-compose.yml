@@ -5,10 +5,13 @@ networks:
 
 volumes:
     prom_volume:
+    grafana_data:
 
 services:
     grafana:
         image: grafana/grafana
+        volumes:
+            - grafana_data:/var/lib/grafana
         ports: 
             - 3000:3000
         networks:
